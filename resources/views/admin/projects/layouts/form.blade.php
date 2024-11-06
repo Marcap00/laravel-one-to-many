@@ -12,7 +12,7 @@
             @csrf
             <div class="row row-cols-2 g-2 text-white">
                 <div class="col flex-column-center my-2">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="author"><h6 class="mb-2">Author: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
                             <input type="text" class="form-control p-2" id="author" name="author" placeholder="Enter project author..." value="{{ old('author', $project->author) }}">
@@ -21,13 +21,13 @@
                         @endif
                     </div>
                     @error("author")
-                    <div class="alert alert-yellow">
+                    <div class="alert alert-warning">
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
                 <div class="col flex-column-center my-2">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="title"><h6 class="mb-2">Title: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
                             <input type="text" class="form-control p-2" id="title" name="title" placeholder="Enter project title..." value="{{ old('title', $project->title) }}">
@@ -36,13 +36,13 @@
                         @endif
                     </div>
                     @error("title")
-                    <div class="alert alert-yellow">
+                    <div class="alert alert-warning">
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
                 <div class="col flex-column-center my-2">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="description"><h6 class="mb-2">Description: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
                             <input type="text" class="form-control p-2" id="description" name="description" placeholder="Enter project description..." value="{{ old('description', $project->description) }}">
@@ -51,23 +51,34 @@
                         @endif
                     </div>
                     @error("description")
-                    <div class="alert alert-yellow">
+                    <div class="alert alert-warning">
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
                 <div class="col flex-column-center my-2">
-                    <div class="form-group">
-                        <label for="type_id" class="form-label">Type:</label>
-                        <select name="type_id" id="type_id" class="form-control">
+                    <div class="form-group mb-2">
+                        <label for="type" class="form-label">Type:</label>
+                        {{--
+                        Laravel Documentation
+                        # Blade Template - # Additional Attributes
+                        <select name="version">
+                            @foreach ($product->versions as $version)
+                                <option value="{{ $version }}" @selected(old('version') == $version)>
+                                    {{ $version }}
+                                </option>
+                            @endforeach
+                        </select>
+                        --}}
+                        <select name="type" id="type" class="form-select">
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}">
+                                <option value="{{ $type->id }}" @selected(old('type') == $type->id)>
                                     {{ $type->name }}
                                 </option>
                             @endforeach
                         </select>
 
-                        @error("type_id")
+                        @error("type")
                             <div class="alert alert-warning">
                                 {{ $message }}
                             </div>
