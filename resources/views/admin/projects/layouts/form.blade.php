@@ -56,6 +56,24 @@
                     </div>
                     @enderror
                 </div>
+                <div class="col flex-column-center my-2">
+                    <div class="form-group">
+                        <label for="type_id" class="form-label">Type:</label>
+                        <select name="type_id" id="type_id" class="form-control">
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}">
+                                    {{ $type->name }}
+                                </option>
+                            @endforeach
+                        </select>
+
+                        @error("type_id")
+                            <div class="alert alert-warning">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                </div>
             </div>
             <div class="flex-center my-3">
                 <button type="submit" class="btn btn-warning me-2">

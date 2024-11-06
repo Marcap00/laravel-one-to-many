@@ -19,6 +19,7 @@
             <thead class="text-red">
                 <tr class= text-red">
                     <th>ID</th>
+                    <th>Category</th>
                     <th>Author</th>
                     <th>Title</th>
                     <th>Description</th>
@@ -29,6 +30,7 @@
                 @forelse ($projects as $project)
                 <tr>
                     <td class= text-red">{{ $project->id }}</td>
+                    <td>{{ $project->type->name }}</td>
                     <td>{{ $project->author }}</td>
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->description }}</td>

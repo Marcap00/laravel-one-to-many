@@ -6,6 +6,7 @@
             <div class="col-md-12">
                 <div class="card text-center">
                     <div class="card-body">
+                        <p class="card-text">Category: {{ $project->type->name }}</p>
                         <h5 class="card-title"> {{ $project->author }} </h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary"> {{ $project->title }} </h6>
                         <p class="card-text"> {{ $project->description }} </p>

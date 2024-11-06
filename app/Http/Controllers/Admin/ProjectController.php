@@ -6,10 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth");
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -26,7 +32,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.layouts.form');
+        $types = Type::all();
+        return view('admin.projects.layouts.form', compact('types'));
     }
 
     /**
@@ -54,7 +61,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.layouts.form', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.layouts.form', compact('project', 'types'));
     }
 
     /**
