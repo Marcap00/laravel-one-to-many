@@ -70,7 +70,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Are you sure you want to {{ (Route::currentRouteName() == 'admin.projects.bin') ? 'permanent' : ''}} delete <span class="fw-bold">{{ $project->title }}</span>?</p>
+                                        <p>Are you sure you want to <span class="text-danger fw-semibold">{{ (Route::currentRouteName() == 'admin.projects.bin') ? 'permanent' : ''}}</span> delete <span class="fw-semibold">{{ $project->title }}</span>?</p>
                                     </div>
 
                                     <div class="modal-footer">

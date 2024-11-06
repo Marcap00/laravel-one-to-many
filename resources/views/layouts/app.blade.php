@@ -10,7 +10,7 @@
     <link rel="icon" href="{{ asset('logomark.svg') }}" type="image/svg">
 
     <title>
-        {{-- {{ config('app.name', 'Laravel ciao') }} --}}
+        {{-- {{ config('app.name', 'Laravel') }} --}}
         @yield('title', 'Laravel Auth')
     </title>
 
@@ -26,9 +26,11 @@
 </head>
 <body  data-bs-theme="dark">
     <div id="app">
-        @include('includes.header')
+        <header>
+            @include('includes.navbar')
+        </header>
 
-        <main class="py-4">
+        <main class="py-4 overflow-scroll">
             @yield('content')
         </main>
     </div>

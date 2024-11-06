@@ -70,9 +70,9 @@
                             @endforeach
                         </select>
                         --}}
-                        <select name="type" id="type" class="form-select">
+                        <select name="type_id" id="type_id" class="form-select">
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}" @selected(old('type') == $type->id)>
+                                <option value="{{ $type->id }}" @selected(old('type_id') == $type->id)>
                                     {{ $type->name }}
                                 </option>
                             @endforeach
