@@ -10,7 +10,7 @@ class WelcomeController extends Controller
     public function welcome()
     {
 
-        $projects = Project::all();
+        $projects = Project::paginate(9);
 
         return view('welcome', compact('projects'));
     }

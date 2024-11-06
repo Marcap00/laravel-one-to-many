@@ -25,5 +25,8 @@
                 </div>
             @endforelse
         </div>
+        <div>
+            {{ $projects->links() }}
+        </div>
     </div>
 @endsection
