@@ -101,6 +101,9 @@
                 @endforelse
             </tbody>
         </table>
+        <div>
+            {{ $projects->links() }}
+        </div>
     </div>
 </main>
     </div>
