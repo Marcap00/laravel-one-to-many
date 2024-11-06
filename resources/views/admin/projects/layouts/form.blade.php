@@ -15,9 +15,9 @@
                     <div class="form-group">
                         <label for="author"><h6 class="mb-2">Author: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
-                            <input type="text" class="form-control p-2" id="author" name="author" placeholder="Enter pokemon author..." value="{{ old('author', $project->author) }}">
+                            <input type="text" class="form-control p-2" id="author" name="author" placeholder="Enter project author..." value="{{ old('author', $project->author) }}">
                         @elseif (Route::currentRouteName() == 'admin.projects.create')
-                            <input type="text" class="form-control p-2" id="author" name="author" placeholder="Enter pokemon author..." value="{{ old('author') }}">
+                            <input type="text" class="form-control p-2" id="author" name="author" placeholder="Enter project author..." value="{{ old('author') }}">
                         @endif
                     </div>
                     @error("author")
@@ -30,9 +30,9 @@
                     <div class="form-group">
                         <label for="title"><h6 class="mb-2">Title: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
-                            <input type="text" class="form-control p-2" id="title" name="title" placeholder="Enter pokemon title..." value="{{ old('title', $project->title) }}">
+                            <input type="text" class="form-control p-2" id="title" name="title" placeholder="Enter project title..." value="{{ old('title', $project->title) }}">
                         @elseif (Route::currentRouteName() == 'admin.projects.create')
-                            <input type="text" class="form-control p-2" id="title" name="title" placeholder="Enter pokemon title..." value="{{ old('title') }}">
+                            <input type="text" class="form-control p-2" id="title" name="title" placeholder="Enter project title..." value="{{ old('title') }}">
                         @endif
                     </div>
                     @error("title")
@@ -45,9 +45,9 @@
                     <div class="form-group">
                         <label for="description"><h6 class="mb-2">Description: </h6></label>
                         @if (Route::currentRouteName() == 'admin.projects.edit')
-                            <input type="text" class="form-control p-2" id="description" name="description" placeholder="Enter pokemon description..." value="{{ old('description', $project->description) }}">
+                            <input type="text" class="form-control p-2" id="description" name="description" placeholder="Enter project description..." value="{{ old('description', $project->description) }}">
                         @elseif (Route::currentRouteName() == 'admin.projects.create')
-                            <input type="text" class="form-control p-2" id="description" name="description" placeholder="Enter pokemon description..." value="{{ old('description') }}">
+                            <input type="text" class="form-control p-2" id="description" name="description" placeholder="Enter project description..." value="{{ old('description') }}">
                         @endif
                     </div>
                     @error("description")
@@ -71,6 +71,10 @@
                     Reset fields
                     <i class="fas fa-undo ms-2"></i>
                 </button>
+                <a href="{{ route('admin.projects.index') }}" class="btn btn-danger">
+                    Go back
+                    <i class="fas fa-arrow-left ms-2"></i>
+                </a>
             </div>
         </form>
     </div>

@@ -100,7 +100,8 @@ class ProjectController extends Controller
     public function bin()
     {
         // if we are in front of a query builder we must use get() method
-        $projects = Project::onlyTrashed()->get();
+        $projects = Project::onlyTrashed()->paginate(10);
+
         return view('admin.projects.layouts.table', compact('projects'));
     }
 }

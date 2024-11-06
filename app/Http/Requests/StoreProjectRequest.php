@@ -28,7 +28,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'author' => ['required', 'string', 'max:255'],
-            'title' => ['required', 'string', 'max:255', Rule::unique("projects")->ignore($this->project)],
+            'title' => ['required', 'string', 'max:255', 'unique:projects,title'],
             'description' => ['required', 'string', 'max:255'],
         ];
     }

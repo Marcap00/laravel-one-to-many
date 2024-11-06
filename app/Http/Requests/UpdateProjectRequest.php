@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class UpdateProjectRequest extends FormRequest
 {
@@ -27,7 +28,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'author' => ['required', 'string', 'max:255'],
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255', Rule::unique("projects")->ignore($this->project)],
             'description' => ['required', 'string', 'max:255'],
         ];
     }
